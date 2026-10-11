@@ -1,0 +1,7 @@
+## Interface: 120100, 120105, 11509, 20506, 50504
+## Title: LevelUpScreenshot
+## Notes: Takes a screenshot every time you level up, with your name and new level shown in chat.
+## Author: cisco-tac-enjoyer
+## Version: 1.0.0
+## SavedVariables: LevelUpScreenshotDB
+LevelUpScreenshot.lua
