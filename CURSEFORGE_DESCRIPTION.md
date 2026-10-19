@@ -31,7 +31,7 @@ All commands start with `/lus`.
 | `/lus test` | Takes a test screenshot right now, exactly like a real level-up |
 | `/lus on` | Turns automatic level-up screenshots on |
 | `/lus off` | Turns automatic level-up screenshots off |
-| `/lus delay <seconds>` | Sets the wait time before the screenshot, from 0.2 to 5 seconds (default: 1) |
+| `/lus delay <seconds>` | Sets the wait time before the screenshot, from 0.2 to 5 seconds (default: 0.2) |
 | `/lus format png` | Saves level-up screenshots as PNG (default) |
 | `/lus format jpg` | Saves level-up screenshots as JPG |
 | `/lus format tga` | Saves level-up screenshots as TGA (Windows only) |
@@ -51,7 +51,7 @@ All commands start with `/lus`.
 
 1. You level up.
 2. A gold line appears in your chat: **"YourName reached level XX!"**
-3. After a short delay (1 second by default), the addon takes a screenshot in your chosen format.
+3. After a short delay (0.2 seconds by default), the addon takes a screenshot in your chosen format.
 4. Your normal screenshot format is restored immediately.
 
 Screenshots are saved in your usual WoW screenshot folder, for example:

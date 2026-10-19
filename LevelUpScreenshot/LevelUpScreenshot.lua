@@ -6,7 +6,7 @@ local SAFETY_SECONDS = 5
 
 local DEFAULTS = {
   enabled = true,
-  delay = 1.0,
+  delay = 0.2,
   format = "png",
   restoreFormat = nil,
   pendingRestore = false,
@@ -109,7 +109,7 @@ local function ShowHelp()
   Print("/lus help - list all commands")
   Print("/lus test - run the level-up flow now with your current level")
   Print("/lus on | off - enable or disable")
-  Print("/lus delay <seconds> - set the delay (0.2 to 5, default 1)")
+  Print("/lus delay <seconds> - set the delay (0.2 to 5, default 0.2)")
   Print("/lus format png|jpg|tga - set the level-up screenshot format")
   Print("/lus reset - restore the defaults")
 end
@@ -132,7 +132,7 @@ local function HandleSlash(input)
     db.enabled = false
     Print("Disabled.")
   elseif cmd == "delay" then
-    local seconds = tonumber(arg)
+    local seconds = tonumber((string.gsub(arg, ",", ".")))
     if not seconds or seconds < MIN_DELAY or seconds > MAX_DELAY then
       Print("The delay must be a number from 0.2 to 5 seconds.")
       return
@@ -156,7 +156,7 @@ local function HandleSlash(input)
     db.enabled = DEFAULTS.enabled
     db.delay = DEFAULTS.delay
     db.format = DEFAULTS.format
-    Print("Defaults restored (enabled, 1 s, PNG).")
+    Print("Defaults restored (enabled, 0.2 s, PNG).")
     CheckConflict()
   else
     Print("Unknown command. Type /lus help for a list of commands.")
